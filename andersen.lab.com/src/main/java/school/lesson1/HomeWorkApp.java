@@ -9,7 +9,6 @@ public class HomeWorkApp
 		printColor();
 		compareNumbers();
 	}
-
 	public static void printThreeWords()
 	{
 		String a = "Orange\n";
