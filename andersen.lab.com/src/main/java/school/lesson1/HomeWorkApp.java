@@ -16,32 +16,32 @@ public class HomeWorkApp
 		String c = "Apple\n";
 		System.out.println(a);
 		System.out.println(b);
-		System.out.println(c);  // Вывод в одну строку кода System.out.printf("%s%n%s%n%s%n",a, b, c);
+		System.out.println(c);  // ????? ? ???? ?????? ???? System.out.printf("%s%n%s%n%s%n",a, b, c);
 	}
 	public static void checkSumSign()
 	{
-		int a = 1;  // Использование случайного значения = (int) (Math.random()*(200+1) - 100);
+		int a = 1;  // ????????????? ?????????? ???????? = (int) (Math.random()*(200+1) - 100);
 		int b = 2;
 		int c = a + b;
 		if(c >= 0)
-			System.out.println("Сумма положительная\n");
+			System.out.println("????? ?????????????\n");
 		else
-			System.out.println("Сумма отрицательная\n");
+			System.out.println("????? ?????????????\n");
 	}
 	public static void printColor()
 	{
 		int value = 100000;
 		if(value <= 0)
-			System.out.println("Красный\n");
+			System.out.println("???????\n");
 		if(value <= 100 && value > 0)
-			System.out.println("Желтый\n");
+			System.out.println("??????\n");
 		else if(value > 100)
-			System.out.println("Зеленый\n");
+			System.out.println("???????\n");
 	}
 	public static void compareNumbers()
 	{
-		final int a = 1;
-		final int b = 2;
+		int a = 1;
+		int b = 2;
 		if(a >= b)
 			System.out.println("a >= b");
 		else
