@@ -88,9 +88,7 @@ public class Employee
 		else
 			throw new IllegalStateException("Age can't be less then 18");
 	}
-	// public String checkIfOlder40()
 		
-
 	@Override
 	public String toString()
 {
