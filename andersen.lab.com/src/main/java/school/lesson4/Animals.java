@@ -1,19 +1,15 @@
 package school.lesson4;
 
-import java.util.Random;
+public abstract class Animals{
+	public int length;
+	public String name;
+	public int runLimit;
+	public int swimLimit;
+	public int appetite;
 
-public abstract class Animals implements
-{
-	private String name;
-	private int runLimit;
-	private int swimLimit;
-	int length;
-	public void info(){
-		System.out.println("name: "+ name);
-	}
-
+	abstract int swim();
+	abstract int run();
 }
-
 //	private class Plate
 //	{
 //		private int food;
