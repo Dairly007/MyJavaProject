@@ -1,19 +1,24 @@
 package school.lesson4;
 
-class Dog extends Animals
+class Dog extends Animals implements AnimalAction
 {
 	private String name;
 	private int runLimit;
 	private int swimLimit;
 	private int appetite;
-	private int length = 15;
+	private int length;
 
-//	public Dog(String name, int appetite, int length)
-//	{
-//		this.name = name;
-//		this.appetite = appetite;
-//		this.length=length;
-//	}
+	public Dog(String name, int appetite, int length)
+	{
+		this.name = name;
+		this.appetite = appetite;
+		this.length=length;
+		this.runLimit = runLimit;
+		this.swimLimit = swimLimit;
+	}
+
+
+
 	@Override
 	public int swim(int length)
 	{

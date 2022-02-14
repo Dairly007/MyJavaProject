@@ -1,18 +1,19 @@
 package school.lesson4;
 
-public abstract class Animals{
-	public int length;
-	public String name;
+public abstract class Animals implements AnimalAction{
+	protected int length;
+	protected String name;
 	public int runLimit;
 	public int swimLimit;
-	public int appetite;
+	protected int appetite;
+
 
 	//	public Dog(String name, int appetite, int length)
-	//	{
-	//		this.name = name;
-	//		this.appetite = appetite;
-	//		this.length=length;
-	//	}
+//		{
+//			this.name = name;
+//			this.appetite = appetite;
+//			this.length=length;
+//		}
 	public abstract int swim(int length);
 
 	public abstract int run(int length);

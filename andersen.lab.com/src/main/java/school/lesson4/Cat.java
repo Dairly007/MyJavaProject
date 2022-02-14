@@ -1,9 +1,10 @@
 package school.lesson4;
 
-public class Cat extends Animals {
+public class Cat extends Animals implements AnimalAction
+{
 	private String name;
-	private int runLimit = 200;
-	private int swimLimit = 0;
+	private int runLimit; // = 200;
+	private int swimLimit; //= 0;
 	private int appetite;
 	private int length;
 
@@ -11,6 +12,8 @@ public class Cat extends Animals {
 	{
 		this.name = name;
 		this.appetite = appetite;
+		this.length = length;
+		this.runLimit = runLimit;
 	}
 
 	@Override
