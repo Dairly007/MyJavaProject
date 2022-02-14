@@ -2,15 +2,12 @@
 //
 //import java.util.Random;
 //
-//public interface Main
+//public class Main
 //{
 //	public static void main(String[] args)
 //	{
-//		Random random = new Random();
-//		int length = random.nextInt();
-////		Animals animals;
-////		animals = new Animals;
-////		Cat barsik = new Cat();
+//		Dog a = new Dog("gogi", 95);
 //
-//
-
+//	}
+//}
+//}
