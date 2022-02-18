@@ -1,20 +1,24 @@
 package school.lesson5;
 
-public abstract class Fruit<T>
+public class Fruit<A,O>
 {
-	protected T[] objType;
+	protected A apples;
+	protected O oranges;
 	protected int weight;
 
 
-	public T setType(Object[] objType)
+	public Fruit(A apples, O oranges)
 	{
-		this.objType = (T[]) objType;
-		return null;
+		this.apples = apples;
+		this.oranges = oranges;
 	}
 
-	public T getType(T[] objType)
+	public A getApples()
 	{
-		return null;
+		return apples;
+	}
+	public O getOranges(){
+		return oranges;
 	}
 
 	public int setWeight(int weight[])

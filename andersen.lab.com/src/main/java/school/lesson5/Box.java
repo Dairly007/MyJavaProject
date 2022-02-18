@@ -1,6 +1,6 @@
 package school.lesson5;
 
-public class Box
+public class Box <A,O extends Fruit>
 {
 
 }
