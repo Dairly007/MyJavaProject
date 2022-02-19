@@ -10,7 +10,10 @@ public class Main
 		Dog dogi = new Dog();
 		Cat kitty = new Cat();
 		dogi.animal("dogi", 100, 95);
-
+		dogi.run(100);
+		dogi.swim(100);
+		kitty.swim(100);
+		kitty.run(100);
 	}
 
 }
