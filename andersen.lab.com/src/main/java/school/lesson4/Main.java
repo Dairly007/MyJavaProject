@@ -11,10 +11,10 @@ public class Main
 		Cat kitty = new Cat();
 		dogi.animal("dogi", 100, 95);
 		kitty.animal("kitty",100,8);
-		dogi.run(100);
-		dogi.swim(100);
-		kitty.swim(100);
-		kitty.run(100);
+		System.out.println(dogi.run(100));
+		System.out.println(dogi.swim(100));
+		System.out.println(kitty.swim(100));
+		System.out.println(kitty.run(100));
 	}
 
 }

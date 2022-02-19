@@ -33,13 +33,4 @@ public class Cat extends Animals
 	}
 }
 
-//	public class Main
-//	{
-//		public static void main(String[] args)
-//		{
-//			Animals a = new Cat("barsa", 95);
-//			a.swim();
-//
-//		}
-//	}
 
