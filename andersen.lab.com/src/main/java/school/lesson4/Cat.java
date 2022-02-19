@@ -15,7 +15,7 @@ public class Cat extends Animals
 	public int swim(int length)
 	{
 		super.swimLimit = 0;
-		System.out.println(super.name + "can't swimming");
+		System.out.println(super.name + " can't swimming");
 		return super.swimLimit;
 	}
 
@@ -23,10 +23,10 @@ public class Cat extends Animals
 	public int run(int length)
 	{
 		super.runLimit = 200;
-		System.out.println(super.name + "is running at: ");
+		System.out.println(super.name + " is running at: ");
 		if (length > super.runLimit)
 			return super.runLimit;
-		else if (length < super.runLimit && length < 0)
+		else if (length < super.runLimit && length > 0)
 			return length;
 		else
 			throw new IllegalStateException("Error: Integers can't have negative value");

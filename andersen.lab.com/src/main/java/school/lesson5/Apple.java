@@ -4,6 +4,3 @@ public class Apple <F extends Fruit>
 {
 
 	}
-
-
-}
