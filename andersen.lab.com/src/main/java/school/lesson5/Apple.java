@@ -1,10 +1,8 @@
 package school.lesson5;
 
-public class Apple <T> extends Orange
+public class Apple <F extends Fruit>
 {
-	public Apple(Object apples, Object oranges)
-	{
-		super(apples, oranges);
+
 	}
 
 

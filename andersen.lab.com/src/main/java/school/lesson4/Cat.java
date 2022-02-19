@@ -1,38 +1,37 @@
 package school.lesson4;
 
-public class Cat extends Animals implements AnimalAction
-{
-	private String name;
-	private int runLimit; // = 200;
-	private int swimLimit; //= 0;
-	private int appetite;
-	private int length;
+public class Cat extends Animals
 
-	public Cat(String name, int appetite)
+{
+	@Override
+	public void animal(String name, int length, int appetite)
 	{
-		this.name = name;
-		this.appetite = appetite;
-		this.length = length;
-		this.runLimit = runLimit;
+		super.name = name;
+		super.length = length;
+		super.appetite = appetite;
 	}
 
 	@Override
 	public int swim(int length)
 	{
-		System.out.println(name + "can't swimming");
-		return swimLimit;
+		super.swimLimit = 0;
+		System.out.println(super.name + "can't swimming");
+		return super.swimLimit;
 	}
+
 	@Override
 	public int run(int length)
 	{
-		System.out.println(name + "is running at: ");
-		if (length > runLimit)
-			return runLimit;
-		else if (length < runLimit && length < 0)
+		super.runLimit = 200;
+		System.out.println(super.name + "is running at: ");
+		if (length > super.runLimit)
+			return super.runLimit;
+		else if (length < super.runLimit && length < 0)
 			return length;
 		else
 			throw new IllegalStateException("Error: Integers can't have negative value");
 	}
+}
 
 //	public class Main
 //	{
@@ -43,4 +42,4 @@ public class Cat extends Animals implements AnimalAction
 //
 //		}
 //	}
-}
+

@@ -1,33 +1,16 @@
 package school.lesson5;
 
-public class Fruit<A,O>
+import java.util.ArrayList;
+
+public abstract class Fruit<F> extends Box
 {
-	protected A apples;
-	protected O oranges;
-	protected int weight;
+	protected F[] fruit;
+	protected float weight;
+	protected int amount;
 
+	public abstract F setFruit(F[] fruit);
+	public abstract F getFruit();
+	public abstract float setWeight(float weight, int amount);
+	public abstract float getWeight(float weight, int amount);
 
-	public Fruit(A apples, O oranges)
-	{
-		this.apples = apples;
-		this.oranges = oranges;
-	}
-
-	public A getApples()
-	{
-		return apples;
-	}
-	public O getOranges(){
-		return oranges;
-	}
-
-	public int setWeight(int weight[])
-	{
-		return 0;
-	}
-
-	public int weight(int weight[])
-	{
-		return 0;
-	}
 }

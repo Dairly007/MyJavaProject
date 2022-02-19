@@ -1,44 +1,37 @@
 package school.lesson4;
 
-class Dog extends Animals implements AnimalAction
+public class Dog extends Animals
 {
-	private String name;
-	private int runLimit;
-	private int swimLimit;
-	private int appetite;
-	private int length;
 
-	public Dog(String name, int appetite, int length)
+	@Override
+	public void animal(String name, int length, int appetite)
 	{
-		this.name = name;
-		this.appetite = appetite;
-		this.length=length;
-		this.runLimit = runLimit;
-		this.swimLimit = swimLimit;
+		super.name = name;
+		super.length = length;
+		super.appetite = appetite;
 	}
-
-
 
 	@Override
 	public int swim(int length)
 	{
-		System.out.println(name + "is swimming at: ");
-		if (length > swimLimit)
-			return swimLimit;
-		else if (length < swimLimit && length >= 0)
-		{
+		super.swimLimit = 10;
+		System.out.println(super.name + "is swimming at: ");
+		if (length > super.swimLimit)
+			return super.swimLimit;
+		else if (length < super.swimLimit && length >= 0)
 			return length;
-		} else
+		else
 			throw new IllegalStateException("Error: Integers can't have negative value");
 	}
 
 	@Override
 	public int run(int length)
 	{
-		System.out.println(name + "is running at: ");
-		if (length > runLimit)
-			return runLimit;
-		else if (length < runLimit && length < 0)
+		super.runLimit = 500;
+		System.out.println(super.name + "is running at: ");
+		if (length > super.runLimit)
+			return super.runLimit;
+		else if (length < super.runLimit && length < 0)
 			return length;
 		else
 			throw new IllegalStateException("Error: Integers can't have negative value");

@@ -1,10 +1,10 @@
 package school.lesson5;
 
-public class Orange <O> extends Fruit
+public class Orange <F extends Fruit>
 {
 
-	public Orange(Object apples, Object oranges)
-	{
-		super(apples, oranges);
+	public Orange(float w, int c, F[] fruit){
+		super();
 	}
+
 }
