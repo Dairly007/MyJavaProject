@@ -1,11 +1,9 @@
 package school.lesson5;
 
-public class Orange <F extends Fruit>
+public class Orange extends Fruit
 {
-	int amount;
+	public Orange(){
 
-	public Orange(float w, int c, F[] fruit){
-		super();
+		super(1.5f);
 	}
-
 }

@@ -1,5 +1,8 @@
 package school.lesson5;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class ChangeArr
 {
 	String name;
@@ -8,7 +11,6 @@ public class ChangeArr
 	{
 		this.name = name;
 	}
-
 	public static void changeArr  (ChangeArr[] arr, int a, int b){
 
 		for (ChangeArr changeArr : arr)
@@ -31,4 +33,5 @@ public class ChangeArr
 		changeArr( a, 0, 1);
 		System.out.println((a[0].name));
 	}
+
 }
