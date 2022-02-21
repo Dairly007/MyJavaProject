@@ -18,8 +18,7 @@ public class Array
 				try
 				{
 					res += Integer.parseInt(arr[i][j]);
-				}
-				catch (NumberFormatException e)
+				} catch (NumberFormatException e)
 				{
 					throw new MyArrayDataException(e.getMessage(), i, j);
 				}

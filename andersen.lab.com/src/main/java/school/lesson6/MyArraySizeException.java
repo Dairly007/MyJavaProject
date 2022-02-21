@@ -7,5 +7,3 @@ class MyArraySizeException extends Throwable
 		super(e);
 	}
 }
-
-
