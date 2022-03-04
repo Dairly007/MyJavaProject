@@ -1,44 +1,24 @@
 package school.lesson7;
 
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.Scanner;
+import java.io.FileNotFoundException;
+import java.util.Arrays;
 
 public class Main
 {
-	public static void main(String[] args)
+	public static void main(String[] args) throws FileNotFoundException
 	{
-		try
-		{
-			FileWriter csvWriter = new FileWriter("new.csv");
-		} catch (IOException e)
-		{
-			e.printStackTrace();
-		}
-		Scanner sc = new Scanner(System.in);
-		String header = null;
-		int[][] data;
-		int i = 0;
-		int j = 0;
-		try
-		{
-			System.out.println("Enter name of headers an spaces");
-			header = sc.nextLine();
-			int tmp = sc.nextInt();
-			for ()
-
-		} catch (Exception e)
-		{
-			System.out.println("It's not string");
-			e.printStackTrace();
-		}
-		System.out.println(header);
+		AppData appData = new AppData();
+		appData.load("C:\\Users\\Dairly\\IdeaProjects\\JavaProject\\" +
+				"myJavaProject\\andersen.lab.com\\src\\main\\java\\school\\lesson7\\test.csv");
+		String[] header1 = new String[]{"odin", "dva", "tri"};
+		int[][] data1 = {{1, 2, 3, 4}, {11, 22, 33, 44},
+				{111, 222, 333, 444}, {1111, 2222, 3333, 4444}};
+		AppData appData1 = new AppData(header1, data1);
+		appData1.setHeader(header1);
+		appData1.setData(data1);
+		System.out.println(Arrays.toString(appData.getHeader()));
+		System.out.println(Arrays.deepToString(appData.getData()));
+		appData1.save(data1);
 	}
+
 }
-	/*");
-csvWriter.append("Name");
-		csvWriter.append(",");
-		csvWriter.append("Role");
-		csvWriter.append(",");
-		csvWriter.append("Topic");
-		csvWriter.append("\n");*/
