@@ -17,18 +17,18 @@
 
 		<!-- https://mvnrepository.com/artifact/com.opencsv/opencsv -->
 
-		<dependency>
+	<dependency>
 			<groupId>com.opencsv</groupId>
              <artifactId>opencsv</artifactId>
              <version>5.6</version>
-		</dependency>
+	</dependency>
 
-		<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>5.8.2</version>
-            <scope>test</scope>
+	<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
+    <dependency>
+	<groupId>org.junit.jupiter</groupId>
+    <artifactId>junit-jupiter-api</artifactId>
+    <version>5.8.2</version>
+    <scope>test</scope>
         </dependency>
 
 		<dependency>
@@ -36,7 +36,12 @@
            <artifactId>commons-io</artifactId>
            <version>2.6</version>
         </dependency>
-
+		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-edge-driver -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-edge-driver</artifactId>
+            <version>4.1.2</version>
+        </dependency>
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 
 		<dependency>
@@ -44,7 +49,23 @@
             <artifactId>selenium-java</artifactId>
             <version>4.1.2</version>
 		</dependency>
+	<dependency>
+    <groupId> org.apache.cassandra</groupId>
+    <artifactId>cassandra-all</artifactId>
+    <version>0.8.1</version>
 
+    <exclusions>
+      <exclusion>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-log4j12</artifactId>
+      </exclusion>
+      <exclusion>
+        <groupId>log4j</groupId>
+        <artifactId>log4j</artifactId>
+      </exclusion>
+    </exclusions>
+
+     </dependency>
 		<!-- https://mvnrepository.com/artifact/au.com.dius.pact.provider/junit -->
         <dependency>
             <groupId>au.com.dius.pact.provider</groupId>
@@ -66,6 +87,7 @@
             <version>7.5</version>
             <scope>test</scope>
         </dependency>
+
 
 
     </dependencies>
