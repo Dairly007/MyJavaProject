@@ -1,7 +1,7 @@
 package school.lesson13;
 
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -18,11 +18,11 @@ class TestCase2Test
 	static WebDriver driver;
 
 
-	@BeforeClass
+	@BeforeAll
 	public static void setUp()
 	{
 		System.setProperty("webdriver.chrome.driver", "C:\\WebDriver\\bin\\chromedriver.exe");
-		WebDriver driver = new ChromeDriver();
+		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		driver.manage().getCookies();
 		driver.manage().window().maximize();
@@ -32,11 +32,6 @@ class TestCase2Test
 	@Test
 	public void mainTest() throws InterruptedException
 	{
-		driver = new ChromeDriver();
-		driver.manage().getCookies();
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
-		driver.get("https://andersenlab.com/");
 		WebElement toScroll = driver.findElement(By.xpath("//a[normalize-space()='Pricing']"));
 		assertNotNull(toScroll, "No such element");
 		Actions action1 = new Actions(driver);
@@ -51,9 +46,10 @@ class TestCase2Test
 		WebElement checkSendButton = driver.findElement(By.xpath("//button[@class ='button-module--button--" +
 				"P1TTA button-module--sizeMD--QGOCN button-module--fullWidthMobile--NWml4']"));
 		assertNotNull(checkSendButton);
+		Thread.sleep(2000);
 	}
 
-	@AfterClass
+	@AfterAll
 	public static void tearDown()
 	{
 		driver.quit();
