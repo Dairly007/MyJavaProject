@@ -6,20 +6,33 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 
-import java.time.Duration;
-
 public class TestCase2
 {
+	private static WebDriver driver;
+
+	public TestCase2(WebDriver driver)
+	{
+		this.driver = driver;
+	}
+
+	public static WebDriver getDriver()
+	{
+		return driver;
+	}
+
+	public static void setDriver(WebDriver driver)
+	{
+		TestCase1.driver = driver;
+	}
+
 	public static void main(String[] args) throws InterruptedException
 
 	{
 		System.setProperty("webdriver.chrome.driver", "C:\\WebDriver\\bin\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
-		driver.manage().getCookies();
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+		driver.manage().getCookies();
 		driver.get("https://andersenlab.com/");
-		Actions scrollClk = new Actions(driver);
 		Actions action1 = new Actions(driver);
 		WebElement toScroll = driver.findElement(By.xpath("//a[normalize-space()='Pricing']"));
 		action1.moveToElement(toScroll).click().release().build().perform();
