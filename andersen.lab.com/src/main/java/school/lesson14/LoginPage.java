@@ -1,12 +1,15 @@
 package school.lesson14;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage
 {
-	protected WebDriver driver;
+	protected static WebDriver driver;
 
 	public LoginPage(WebDriver driver)
 	{
@@ -14,33 +17,57 @@ public class LoginPage
 	}
 
 	@FindBy(xpath = "//button[@class='resplash-btn resplash-btn_primary resplash-btn_mailbox-big svelte-prwih']")
-	private WebElement clickLoginLocator;
+	protected WebElement clickLoginLocator;
 
 	@FindBy(xpath = "//input[@placeholder='Account name']")
-	private WebElement accountField;
+	protected static WebElement accountField;
 
 	@FindBy(xpath ="//input[@placeholder='Password']" )
-	private WebElement passwordField;
+	protected static WebElement passwordField;
 
-/*	@FindBy(xpath = "//iframe[@class='ag-popup__frame__layout__iframe']")
-	private static WebElement loginFrameLocator;
+	@FindBy(xpath = "//iframe[@class='ag-popup__frame__layout__iframe']")
+	protected static WebElement loginFrameLocator;
 
-	public LoginPage setFrame(WebElement loginFrameLocator){
+	public void setFrameDefault(){
+		driver.switchTo().defaultContent();
+	}
+
+	public LoginPage switchToFrame(WebElement loginFrameLocator){
 		driver.switchTo().frame(loginFrameLocator);
-		return this;
-	}*/
+		return new LoginPage(driver);
+	}
+
 	public LoginPage enterEmail(String email){
+		switchToFrame(loginFrameLocator);
 		accountField.sendKeys(email);
 		accountField.submit();
 		return this;
 	}
 	public LoginPage enterPassword(String password){
 		passwordField.sendKeys(password);
-		passwordField.submit();
 		return this;
 	}
-	public Main sumbitLogin(){
-		passwordField.submit();
-		return new Main(driver);
+	public LoginPage submit(WebElement field){
+		field.submit();
+		return new LoginPage(driver);
+	}
+
+	public static LoginPage loginPage() throws InterruptedException
+	{
+		System.setProperty("webdriver.chrome.driver", ConfProperties.getProperty("chromedriver"));
+		WebDriverManager.chromedriver().setup();
+		ChromeDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get(ConfProperties.getProperty("loginPage"));
+		LoginPage loginPageFactory = PageFactory.initElements(driver,LoginPage.class );
+		loginPageFactory.switchToFrame(loginFrameLocator);
+		Thread.sleep(5000);
+		loginPageFactory.enterEmail(ConfProperties.getProperty("email"));
+		Thread.sleep(5000);
+		loginPageFactory.enterPassword(ConfProperties.getProperty("pass"));
+		Thread.sleep(5000);
+		loginPageFactory.submit(passwordField);
+		Thread.sleep(5000);
+		return new LoginPage(driver);
 	}
 }
