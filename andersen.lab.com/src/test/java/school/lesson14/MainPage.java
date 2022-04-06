@@ -7,8 +7,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 
-import java.util.concurrent.TimeUnit;
-
 import static school.lesson14.LoginPage.passwordField;
 import static school.lesson14.Main.clickSendLocator;
 import static school.lesson14.Main.confirmSendLocator;
@@ -20,6 +18,12 @@ class MainPage
 	public static MainPage mainPage;
 	public static WebDriver driver;
 
+	public MainPage(WebDriver driver)
+	{
+		this.driver = driver;
+	}
+
+
 	@BeforeAll
 	public static void setUp()
 	{
@@ -27,6 +31,7 @@ class MainPage
 		driver = new ChromeDriver();
 		MainPage mainPage = new MainPage(driver);
 		LoginPage loginPage = new LoginPage(driver);
+
 		driver.manage().getCookies();
 		driver.manage().window().maximize();
 		driver.get(ConfProperties.getProperty("loginPage"));
@@ -59,12 +64,22 @@ class MainPage
 
 
 	@Test
-	public Main LoginPageTest()
+	public void enterEmailInLetter()
 	{
 		mainPage.enterEmailInLetter();
 		Assert.assertNotNull(ConfProperties.getProperty("email"));
+	}
+
+	@Test
+	public void clickSend()
+	{
 		mainPage.clickSend();
 		Assert.assertNotNull(clickSendLocator);
+	}
+
+	@Test
+	public void confirmSend()
+	{
 		mainPage.confirmSend();
 		Assert.assertNotNull(confirmSendLocator);
 	}
