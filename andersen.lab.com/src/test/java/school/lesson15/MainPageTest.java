@@ -4,12 +4,16 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Description;
 import org.junit.Assert;
 import org.junit.Test;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.logging.LogEntries;
+import org.openqa.selenium.logging.LogEntry;
+import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class MainPageTest
@@ -17,7 +21,7 @@ public class MainPageTest
 	public static MainPage mainPage;
 	public static WebDriver driver;
 
-	@BeforeAll
+	@BeforeEach
 	static void setUp()
 	{
 		WebDriverManager.chromedriver().setup();
@@ -28,6 +32,7 @@ public class MainPageTest
 		driver.get(ConfProperties.getProperty("url"));
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
+
 	@Description("Some detailed test description")
 	@Test
 	public void AuthAndSendLetter() throws InterruptedException
@@ -53,10 +58,14 @@ public class MainPageTest
 		Assert.assertNotNull(mainPage.checkSent);
 	}
 
-	@AfterAll
-	public static void tearDown()
-	{
-		driver.close();
+	@AfterEach
+	public void tearDown() {
+		LogEntries browserLogs = driver.manage().logs().get(LogType.BROWSER);
+		List<LogEntry> allLogRows =
+				browserLogs.getAll();
+		if (allLogRows.size() > 0 ) {
+		}
 		driver.quit();
 	}
+
 }
