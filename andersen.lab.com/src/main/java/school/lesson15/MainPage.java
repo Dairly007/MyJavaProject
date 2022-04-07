@@ -1,4 +1,4 @@
-package school.lesson14;
+package school.lesson15;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -24,7 +24,7 @@ public class MainPage extends LoginPage
 
 
 	@FindBy(xpath = "//span[@class='layer-sent-page__contact-item']")
-	protected WebElement checkSent;
+	public WebElement checkSent;
 
 	@FindBy(xpath = "//span[@class='button2__txt']//ancestor::span[@tabindex='570']")
 	protected static WebElement clickSendLocator;
@@ -33,7 +33,7 @@ public class MainPage extends LoginPage
 	protected static WebElement confirmSendLocator;
 
 	@FindBy(xpath = "//div[@class='container--ItIg4 size_s--2eBQT size_s--3_M-_']//input[@type='text']")
-	protected static WebElement enterEmailField;
+	public static WebElement enterEmailField;
 
 	@FindBy(xpath = "//*[@id='mailbox:submit']/input")
 	private WebElement buttonEnter;

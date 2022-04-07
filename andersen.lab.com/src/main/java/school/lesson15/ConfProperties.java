@@ -1,4 +1,4 @@
-package school.lesson14;
+package school.lesson15;
 
 import java.io.FileInputStream;
 import java.io.IOException;

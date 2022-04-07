@@ -1,4 +1,4 @@
-package school.lesson14;
+package school.lesson15;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -22,10 +22,10 @@ public class LoginPage
 	protected WebElement clickLoginLocator;
 
 	@FindBy(xpath = "//input[@placeholder='Account name']")
-	protected static WebElement accountField;
+	public static WebElement accountField;
 
 	@FindBy(xpath ="//input[@placeholder='Password']" )
-	protected static WebElement passwordField;
+	public static WebElement passwordField;
 
 	@FindBy(xpath = "//iframe[@class='ag-popup__frame__layout__iframe']")
 	protected static WebElement loginFrameLocator;
