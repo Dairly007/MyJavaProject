@@ -10,7 +10,7 @@ public class ConfProperties
 	protected static Properties PROPERTIES;
 	static {
 		try {
-			fileInputStream = new FileInputStream("src/test/resources/conf.properties");
+			fileInputStream = new FileInputStream("C:\\Users\\Dairly\\IdeaProjects\\JavaProject\\myJavaProject\\andersen.lab.com\\src\\test\\resources\\conf.properties");
 			PROPERTIES = new Properties();
 			PROPERTIES.load(fileInputStream);
 		} catch (IOException e) {
