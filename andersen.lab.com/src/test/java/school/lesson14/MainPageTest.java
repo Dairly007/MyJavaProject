@@ -31,40 +31,6 @@ public class MainPageTest
 	@Test
 	public void AuthAndSendLetter() throws InterruptedException
 	{
-//		LoginPage loginPageFactory = PageFactory.initElements(driver, LoginPage.class);
-//		MainPage mainPage = PageFactory.initElements(driver,MainPage.class);
-/*		Assert.assertNotNull(LoginPage.loginFrameLocator);
-		Assert.assertNotNull(ConfProperties.getProperty("email"));
-		loginPage.submit(LoginPage.accountField);
-		Assert.assertNotNull(LoginPage.accountField);
-		loginPage.enterEmail(ConfProperties.getProperty("pass"));
-		Assert.assertNotNull(ConfProperties.getProperty("pass"));
-		loginPage.submit(LoginPage.passwordField);
-		Assert.assertNotNull(LoginPage.passwordField);
-
-		mainPage.enterEmailInLetter(driver);
-		Assert.assertNotNull(ConfProperties.getProperty("email"));
-		mainPage.clickSend(driver);
-		Assert.assertTrue(mainPage.clickSendLocator.isDisplayed());
-		mainPage.confirmSend(driver);
-		Assert.assertTrue(mainPage.confirmSendLocator.isDisplayed());*/
-
-/*		WebDriverManager.chromedriver().setup();
-		System.setProperty("webdriver.chrome.driver", ConfProperties.getProperty("driver"));
-		WebDriverManager.chromedriver().setup();
-		WebDriver driver = new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.get(ConfProperties.getProperty("url"));
-
-		loginPageFactory.enterEmail(ConfProperties.getProperty("email"))
-				.enterPassword(ConfProperties.getProperty("pass"))
-				.submit(LoginPage.passwordField);
-		Thread.sleep(400);
-
-		mainPage.enterEmailInLetter(driver)
-				.clickSend(driver)
-				.confirmSend(driver);
-	*/
 		WebDriverManager.chromedriver().setup();
 		System.setProperty("webdriver.chrome.driver", ConfProperties.getProperty("driver"));
 		WebDriverManager.chromedriver().setup();
