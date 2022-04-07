@@ -1,6 +1,7 @@
 package school.lesson15;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import io.qameta.allure.Description;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.jupiter.api.AfterAll;
@@ -17,7 +18,7 @@ public class MainPageTest
 	public static WebDriver driver;
 
 	@BeforeAll
-	public static void setUp()
+	static void setUp()
 	{
 		WebDriverManager.chromedriver().setup();
 		System.setProperty("webdriver.chrome.driver", ConfProperties.getProperty("driver"));
@@ -27,7 +28,7 @@ public class MainPageTest
 		driver.get(ConfProperties.getProperty("url"));
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
-
+	@Description("Some detailed test description")
 	@Test
 	public void AuthAndSendLetter() throws InterruptedException
 	{
@@ -49,14 +50,13 @@ public class MainPageTest
 		mainPage.enterEmailInLetter(driver)
 				.clickSend(driver)
 				.confirmSend(driver);
-
 		Assert.assertNotNull(mainPage.checkSent);
 	}
-
 
 	@AfterAll
 	public static void tearDown()
 	{
+		driver.close();
 		driver.quit();
 	}
 }
